@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <title>You Need Music</title>
 </head>
 <body>
-    <p>test rge</p>
+    <div class = "logo">
+        <h1>You Need Music</h1>
+    </div>
 </body>
 </html>
