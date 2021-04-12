@@ -13,7 +13,39 @@
     width: 100%;
 }
 
+.logoMiddle li {
+    font-size: small;
+    padding: 10px;
+    list-style-type: none;
+}
+
+
+
 .logoMiddleTop {
+    color: black;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: xx-large;
+
+    left: 50px;
+    position: absolute;
+    /*border: 5px solid black;*/
+    /*width: 100%;*/
+}
+
+.loginButtons{
+    color: black;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: xx-large;
+
+    right: 50px;
+    position: absolute;
+    /*border: 5px solid black;*/
+    /*width: 100%;*/
+}
+
+.genrePage {
     color: black;
     font-family: Tahoma;
     font-weight: bold;
@@ -78,4 +110,15 @@ input:focus {
 
 genreList {
     color: red;
+}
+
+.genreArtists {
+    font-size: x-large;
+    font-family: Tahoma;
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+.genreArtists img{
+    border: 5px solid yellow;
 }
