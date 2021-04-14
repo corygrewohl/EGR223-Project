@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST["submit"])) {
     $servername = getenv('IP');
     $databaseUsername = "root";
@@ -17,17 +18,21 @@ if(isset($_POST["submit"])) {
     $result = mysqli_query($db, $query);
     $rowInfo = mysqli_fetch_assoc($result);
 
-    if (password_verify($pass, $rowInfo["password"])) {
-        session_start();
-        $_SESSION["user"] = $user;
-        $_SESSION["userid"] = $rowInfo["id"];
-        header("Location: index.php");
-    } else {
-        print "Invalid username or password!";
-    }
+    if($rowInfo) {
+        if (password_verify($pass, $rowInfo["password"])) {
+            $_SESSION["user"] = $user;
+            $_SESSION["userid"] = $rowInfo["id"];
 
+            $_SESSION['loggedin'] = true;
+            header("Location: index.php");
+        }else {
+            echo "Invalid username or password!";
+        }
+    } else {
+        echo "Invalid username or password!";
+    }
 }
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +41,7 @@ if(isset($_POST["submit"])) {
     <title>Login</title>
 </head>
 <body>
-    <form action = "index.php">
+    <form method="post">
         <div class = "logoMiddle">
             <h1>You Need Music</h1>
             <h5>Login</h5>
